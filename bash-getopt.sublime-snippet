@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+
+opt_${1:f}=
+
+function usage() {
+	echo "Usage: \$(basename \$0) options"
+	echo "Options:"
+	echo "-${1:f} ARG                ${2:Do stuff}"
+	echo "-h                    Help(this message)"
+}
+
+while getopts "h${1:f}:" opt ; do
+        case "\$opt" in
+        ${1:f})  opt_${1:f}=\$OPTARG ;;
+        h) usage; exit ;;
+        esac
+done
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>getopts</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.shell</scope>
+</snippet>
