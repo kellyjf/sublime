@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[
+<html ng-app="${1:myApp}">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
+    <script>
+      var ${1} = angular.module('${1}', ['ngRoute']);
+      ${1:-myApp}.config(function(\$routeProvider) {
+        \$routeProvider.
+          when('/:${2:paramName}', {
+	        templateUrl: '${3:template}.html',
+            controller: '${4:ParamCtrl}'
+          }).
+          otherwise({
+            redirectTo: '/'
+          });
+      });
+      ${1}.controller('CountryListCtrl', function (\$scope, \$http){
+        \$http.get('countries.json').success(function(data) {
+          \$scope.countries = data;
+        });
+      });
+      ${1:-myApp}.controller('${4}', function (\$scope, \$routeParams){
+        \$scope.name = \$routeParams.${2};
+      });
+    </script>
+  </head>
+  <body>
+    <div ng-view></div>
+  </body>
+</html>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>skel</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

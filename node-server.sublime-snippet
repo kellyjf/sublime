@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+var port = ${1:8000},
+    express = require('express'),
+    app = express();
+app.use('/', express.static(__dirname));
+app.listen(port);
+console.log('Now serving http://localhost:'+port+'/${2:index}.html');
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>server</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>
