@@ -1,3 +1,3 @@
 {
-	"shell_cmd": "gnome-terminal -e \"ssh -i /home/jkelly/.ssh/jaguar.key root@$jaguar-1\""
+	"shell_cmd": "gnome-terminal -e \"ssh -i /home/jkelly/.ssh/jaguar.key root@jaguar-1\""
 }
