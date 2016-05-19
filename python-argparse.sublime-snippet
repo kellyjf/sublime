@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+	import argparse
+
+	parser=argparse.ArgumentParser()
+	parser.add_argument("${1-args}", nargs="*", help="")
+	parser.add_argument("--add",     "-a",  action="store_true", help="")
+	parser.add_argument("--ipaddr",  "-i",   help="")
+	args=parser.parse_args()
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>argparse</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+</snippet>
